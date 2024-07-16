@@ -1,16 +1,21 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Login from "./pages/Login"
 import Register from "./pages/Register"
 
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes, useNavigate } from 'react-router-dom'
 import NoPageFound from './NoPageFound'
 import State from './pages/State'
 import Todo from './pages/Todo'
 
 const App = () => {
+  const navigate = useNavigate()
+
+  useEffect(()=>{
+    navigate('/register')
+  },[])
   return (
     <>
-      <BrowserRouter>
+      
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
@@ -19,7 +24,6 @@ const App = () => {
 
           <Route path="*" element={<NoPageFound />} />
         </Routes>
-      </BrowserRouter>
     </>
   )
 }
