@@ -1,0 +1,19 @@
+Hooks =>
+
+useState => Used to store data for a while, 
+
+Syntax =>
+
+take 1 variable => example data ;
+tale 1 function to update variable => setData;
+data;
+const [data , setData] = useState();
+
+
+data = "shashank"; wrong way 
+setData("shashank") okay 
+
+
+take 1 => for example => 
+let data = "kamaljeet";
+console.log(data);

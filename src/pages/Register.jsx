@@ -1,11 +1,32 @@
-import React from 'react'
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
+
+  const [firstName, setFirstName] = useState();
+  const [lastName, setLastName] = useState();
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
+  const navigate = useNavigate()
+
+
+
+
+  function handleSubmit(e) {
+    localStorage.setItem("firstName", firstName)
+    localStorage.setItem("lastName", lastName)
+    localStorage.setItem("email", email)
+    localStorage.setItem("password", password)
+    navigate('/login');
+  }
+
+
+
   return (
     <div>
       <>
         {/* Section: Design Block */}
-        <section className="">
+        <section className="" style={{ height: "100vh" }}>
           {/* Jumbotron */}
           <div
             className="px-4 py-5 px-md-5 text-center h-100vh text-lg-start"
@@ -37,6 +58,7 @@ const Register = () => {
                                 type="text"
                                 id="form3Example1"
                                 className="form-control"
+                                onChange={(e) => setFirstName(e.target.value)}
                               />
                               <label className="form-label" htmlFor="form3Example1">
                                 First name
@@ -49,6 +71,7 @@ const Register = () => {
                                 type="text"
                                 id="form3Example2"
                                 className="form-control"
+                                onChange={(e) => setLastName(e.target.value)}
                               />
                               <label className="form-label" htmlFor="form3Example2">
                                 Last name
@@ -62,6 +85,7 @@ const Register = () => {
                             type="email"
                             id="form3Example3"
                             className="form-control"
+                            onChange={(e) => setEmail(e.target.value)}
                           />
                           <label className="form-label" htmlFor="form3Example3">
                             Email address
@@ -73,6 +97,7 @@ const Register = () => {
                             type="password"
                             id="form3Example4"
                             className="form-control"
+                            onChange={(e) => setPassword(e.target.value)}
                           />
                           <label className="form-label" htmlFor="form3Example4">
                             Password
@@ -96,10 +121,11 @@ const Register = () => {
                         </div>
                         {/* Submit button */}
                         <button
-                          type="submit"
+                          type="button"
                           data-mdb-button-init=""
                           data-mdb-ripple-init=""
                           className="btn btn-primary btn-block mb-4"
+                          onClick={handleSubmit}
                         >
                           Sign up
                         </button>
