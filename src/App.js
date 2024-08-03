@@ -10,9 +10,9 @@ import Todo from './pages/Todo'
 const App = () => {
   const navigate = useNavigate()
 
-  useEffect(()=>{
-    navigate('/register')
-  },[])
+  // useEffect(()=>{
+  //   navigate('/register')
+  // },[])
   return (
     <>
       

@@ -17,3 +17,6 @@ setData("shashank") okay
 take 1 => for example => 
 let data = "kamaljeet";
 console.log(data);
+
+jaon server => 
+live command => npx json-server --watch  path to db.json file --port portnumber 
